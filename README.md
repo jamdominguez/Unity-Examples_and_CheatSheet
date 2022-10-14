@@ -16,6 +16,12 @@ Unity is the most popular video game engine. Reason:
 # 4. Unity Object Components
 
 # 5. C# in Unity
+### Public Variables
+It is possible create public variable in the script associated to a object. Theses variables can be modyfied from editor inclusive with the game running. Normally are used to:
+- Test de variable value in game (screen in red).
+- Assign a scene object to the script. It let get the object assigned properties inside the another object script (screen in green).
+![publicVariables_1](section5/publicVariables_1.png) ![publicVariables_1C](section5/publicVariables_1C.png)
+![publicVariables_2](section5/publicVariables_2.png) ![publicVariables_2C](section5/publicVariables_2C.png)
 
 # 6. CheatSheet
 ## 6.1. Engine Elements
