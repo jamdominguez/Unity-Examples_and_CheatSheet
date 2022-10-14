@@ -76,7 +76,9 @@ It is possible create public variable in the script associated to a object. Thes
 - Test de variable value in game (screen in red).
 - Assign a scene object to the script. It let get the object assigned properties inside the another object script (screen in green).
 ![publicVariables_1](section5/publicVariables_1.png) ![publicVariables_1C](section5/publicVariables_1C.png)
+
 <br>
+
 ![publicVariables_2](section5/publicVariables_2.png) ![publicVariables_2C](section5/publicVariables_2C.png)
 
 <br><br>
@@ -87,6 +89,6 @@ It is possible create public variable in the script associated to a object. Thes
 ## 6.3. Classes
 ## 6.4. Relevant Functions and Parameters
 ## 6.5. Hot Keys
-Hot Key | Description
+Key | Description
 :-------:|------------
 Crl+R+R | Refactor
