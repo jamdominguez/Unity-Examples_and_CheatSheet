@@ -87,3 +87,6 @@ It is possible create public variable in the script associated to a object. Thes
 ## 6.3. Classes
 ## 6.4. Relevant Functions and Parameters
 ## 6.5. Hot Keys
+Hot Key | Description
+:-------:|------------
+Crl+R+R | Refactor
