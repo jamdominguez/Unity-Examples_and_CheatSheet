@@ -11,6 +11,8 @@ Unity is the most popular video game engine. Reason:
 
 # 2. Unity Workspace
 
+
+
 # 3. Unity Engine Elements
 Elements compose a bunch of features to build the game but no are part of the object. 
 ## <u>Sprite</u>
@@ -33,7 +35,7 @@ This element is used to create animations from sprite. Selecting several sprites
 It is advisable to organize all Animation into same folder. This folder normally is used to store the Animator Controller too.<br>
 ![animation](section3/animation_2.png)
 
-- **Loop Time**: Determines the animation is shown in loop.
+- **Loop Time**: Determines the animation is shown in loop. For continuous animation in time like run, walk, idle, etc, set the value true, for other ones like jum, grab, etc, set value false.
 
 <br>
 
@@ -63,6 +65,7 @@ Clicking in a tansiton (is created with right button on state and Make Transitio
 Has Exit Time and Settings > Fixed Duration should be unchecked to avoid transition problems:
 - **Has Exit Time**: Trasition has a fixed exit time
 - **Fixed Duration**: Transition duration is independent of state length
+- **Transition Duration**: Set the duration for the transition. For Sprites in pixel art the right value is 0
 
 <br><br>
 
@@ -83,6 +86,9 @@ Component assigned to print a sprite into the scene. If drag and drop into the s
 - **Color**: Componet color.
 - **Flip**: Turn the image by axis (x o y)
 - **Aditional Setting > Orden in Layer**: Determines the sprite position (in fron of or behind) in the scene
+- **Flip**: X and Y use to flip the sprite according axis
+- **Sorting Layer**: Layer that the object is included
+- **Order in Layer**: Object order in his layer
 
 ![spriteRenderer](section4/spriteRenderer.png)
 
@@ -90,10 +96,14 @@ Component assigned to print a sprite into the scene. If drag and drop into the s
 ## <u>Rigidbody 2D</u>
 [Rigidbody 2D - Unity Documentation](https://docs.unity3d.com/2021.3/Documentation/Manual/class-Rigidbody2D.html)<br>
 A Rigidbody 2D component places an object under the control of the physics engine. Many concepts familiar from the standard Rigidbody component carry over to Rigidbody 2D; the differences are that in 2D, objects can only move in the XY plane and can only rotate on an axis perpendicular to that plane.<br>
-Let place the object into the scene with physics. Can be setted with velocity for example.
+Let place the object into the scene with physics. Can be setted with velocity for example. The ground for example is a object wihtout Rigidbody because It not will be moved.
 
-- **Gravity Scale**: How much gravity affects this body
-- **Constraints > Fixed Rotation**: To fixed the rotation in some axis if is necessary
+- **Gravity Scale**: How much gravity affects this body.
+- **Mass**: Object mass that affect to the force interaction.
+- **Linear Drag**: Indicates how to fast work his decelerate forces.
+- **Angular Drag**: Indicates how to fast work his decelerate rotate forces.
+- **Collision Detection**: Can be calculate frame to frame (discrete) or check if between frame there was some object (continius)
+- **Constraints > Fixed Rotation**: To fixed the rotation in some axis if is necessary.
 
 ![rigidbody2D](section4/rigidbody2D.png)
 
@@ -103,6 +113,7 @@ Let place the object into the scene with physics. Can be setted with velocity fo
 The Capsule Collider 2D is a Collider that interacts with the 2D physics system. The capsule shape has no vertex corners and has a continuous round circumference. This shape allows the Capsule Collider 2D to not get easily caught in the corners of other Colliders. The capsule shape is considered solid and not hollow, which means any other Collider 2Ds that are inside the Capsule Collider 2D are considered to be in contact with the Collider and are forced out of it over time.
 
 - **Edit Collider**: Better option to adjust the collider to the object.
+- **Is Trigger**: Activated, other colliders no are blocked with it.
 
 ![capsuleCollider2D](section4/capsuleCollider2D.png)
 
@@ -136,15 +147,17 @@ It is possible create public variable in the script associated to a object. Thes
 <br><br>
 
 # 6. CheatSheet
-## 6.1. Engine Elements
-## 6.2. Object Components
-## 6.3. Classes
-## 6.4. Relevant Functions
+## 6.1. Examples
+## 6.2. Relevant Functions
 Key | Description
 :-------:|------------
-OnCollisionEnter2D | RigidBody2D function called always the object touch something (another RigidBody)
+OnCollisionEnter2D | RigidBody2D function called always the RigidBody touch other RigidBody
+OnTriggerEnter2D | Collider2D function called always the Collider touch other Collider
+Destroy | Function to delete the object passed in param 
+Instantiate | Function to create a Prefab instance
+DontDestroyOnLoad | Funtion to avoid the object will be destroyed when the scene end
 
-## 6.5. Hot Keys
+## 6.3. Hot Keys
 Key | Description
 :-------:|------------
 Crl+R+R | Refactor
