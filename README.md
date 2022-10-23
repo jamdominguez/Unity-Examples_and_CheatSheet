@@ -148,6 +148,34 @@ It is possible create public variable in the script associated to a object. Thes
 
 # 6. CheatSheet
 ## 6.1. Examples
+### Parallax
+Parallax is a beatiful effect used to gain deep in the scene. Consist in the background movement with the player / cam movement.
+It is based in a youtube video tutorial:
+
+[![parallax tutorial](section6/parallax_a.png)](https://www.youtube.com/watch?v=zit45k6CUMk&t=10s)
+
+- The key is, each background part should be in a different layer and the paint musft finish and start at the same place.
+- Create a empty object into the scene's camera. Call it "Background", drag and drop the images for the parallax background. Order the layers:
+
+![parallax](section6/parallax_b.png)
+
+- Now coy twice the differents parts into "Background" object created, and concatenate the bunch of differents parts.
+
+![parallax](section6/parallax_c.png)
+
+- Create a C# file to create the parallax behaviour. The tric here is create a different offsets in the movement for different background parts. And remove the bunch of background to have infinite background effect.
+
+![parallax](section6/parallax_d.png)
+
+- Reagroup the differents backgrounds and assign the script all of them.
+- Now add the camera like component and set the "parallaxEffect" value. For the parallax effect give minor value to the nearest backgrounds and greater values to the farest backgrounds.
+  -  Close to 0 the movement will be near static
+  -  Close to 1 but under it, the movement will be close to the camera movement
+  -  Upper 1 the movemnt will be faster than the camera
+
+![parallax](section6/parallax_e.png)
+
+
 ## 6.2. Relevant Functions
 Key | Description
 :-------:|------------
@@ -160,4 +188,5 @@ DontDestroyOnLoad | Funtion to avoid the object will be destroyed when the scene
 ## 6.3. Hot Keys
 Key | Description
 :-------:|------------
-Crl+R+R | Refactor
+Crtl+R+R | Refactor
+Ctrl+D | Duplicate object selected
