@@ -103,7 +103,7 @@ Let place the object into the scene with physics. Can be setted with velocity fo
 - **Linear Drag**: Indicates how to fast work his decelerate forces.
 - **Angular Drag**: Indicates how to fast work his decelerate rotate forces.
 - **Collision Detection**: Can be calculate frame to frame (discrete) or check if between frame there was some object (continius)
-- **Constraints > Fixed Rotation**: To fixed the rotation in some axis if is necessary.
+- **Constraints > Freez Rotation**: To fixed the rotation in some axis if is necessary.
 
 ![rigidbody2D](section4/rigidbody2D.png)
 
@@ -175,6 +175,57 @@ It is based in a youtube video tutorial:
 
 ![parallax](section6/parallax_e.png)
 
+<br><br>
+
+### Melee Combat
+The first obstacle found in Unity when start to create a game is the control and interaction between scene objects. It is a example for melee basic combat.
+It is based in a youtube video tutorial:
+
+[![melee combat tutorial](section6/meleeCombat_utube.png)](https://www.youtube.com/watch?v=sPiVz1k-fEs)
+
+It is suppose you have a scene with a player and a enemy, who will be hitted. The player movement is implemented previously.
+
+![melee combat](section6/meleeCombat_a.png)
+
+- Add a new C# file to implement the combat behaviour on the player. And comment what do you want to do (to organizate):
+  - Animation
+  - Detect objects
+  - Effect on objects
+
+![melee combat](section6/meleeCombat_b.png)
+
+- The player can attack from any state. It is necessary add a new Animation for the player attack. To change the animation use a trigger (called attack)
+
+![melee combat](section6/meleeCombat_c.png)
+![melee combat](section6/meleeCombat_d.png)
+![melee combat](section6/meleeCombat_e.png)
+
+- Nex step is detect the enemies. To do this, is necessary some variables like:
+  - Hit point. In the space it is necessary set the hit position. In player, create a empty object called "AttackPoint", and move this to the weapon range attack. In the C# file will be necessary add a public Transform variable to set the "AttackPoint" reference to the PlayerCombat script.
+  - Attack range. It is good idea will be a public float variable to adjust the range executing the game.
+  - Objects affected. In this case, all enemies. It usefull the layers here (LayerMask class).
+
+![melee combat](section6/meleeCombat_f.png)
+![melee combat](section6/meleeCombat_g.png)
+![melee combat](section6/meleeCombat_h.png)
+
+- Like not is possible see the range of the AttackPoint, is usefull use OnDrawGizmoSelected function to draw the range of the attack point.
+- In the inspector, with the enemy object selected, can asign a layer previously created or created a new to assign (like Enemies). And set this layer into the script public variable to determinate that the objects in Enemies layer can be attacked (by Attack() function)
+
+![melee combat](section6/meleeCombat_i.png)
+![melee combat](section6/meleeCombat_j.png)
+
+- In this point, the melee combat main idea is completed. Now it is possible add HP to the enemies, damage point, or whatever you want. To give behaviour to the enemies it is necessary add a C# file and animations (hurt, die, etc). After enemy die, will be necessary disable the object. In my case with one hit the enemy is defeated and at the end of the "die" animation call a event to destroy the object.
+
+![melee combat](section6/meleeCombat_l.png)
+![melee combat](section6/meleeCombat_ll.png)
+![melee combat](section6/meleeCombat_m.png)
+
+- Is usefull use debug mode in Unity in the inspector section to review the variables, on the top right.
+
+![melee combat](section6/meleeCombat_k.png)
+
+ 
 
 ## 6.2. Relevant Functions
 Key | Description
@@ -184,6 +235,7 @@ OnTriggerEnter2D | Collider2D function called always the Collider touch other Co
 Destroy | Function to delete the object passed in param 
 Instantiate | Function to create a Prefab instance
 DontDestroyOnLoad | Funtion to avoid the object will be destroyed when the scene end
+OverlapCircleAll | Physic2D function used to create a circle in the object position setted by parameter, range setted and objects to detec too. Returns the array object's collider detected.
 
 ## 6.3. Hot Keys
 Key | Description
