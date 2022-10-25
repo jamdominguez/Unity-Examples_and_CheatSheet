@@ -1,3 +1,4 @@
+
 # Unity guide
 A bunch of Unity examples to play and test the engine elements and tools. Documentation and cheatsheet.
 
@@ -7,11 +8,43 @@ Unity is the most popular video game engine. Reason:
 - **Easy**: No much dificult to learn and use a extended programming language (C#)
 - **Versatile**: It is possible build 2D and 3D games
 
+# Table of Content
+
+- [Unity guide](#unity-guide)
+- [Introduction](#introduction)
+- [Table of Content](#table-of-content)
+- [1. Install Unity](#1-install-unity)
+- [2. Unity Workspace](#2-unity-workspace)
+- [3. Unity Engine Elements](#3-unity-engine-elements)
+  - [<u>Sprite</u>](#uspriteu)
+  - [<u>Animation</u>](#uanimationu)
+  - [<u>Animator Controller</u>](#uanimator-controlleru)
+  - [<u>Tiles Map / Tiles palette</u>](#utiles-map--tiles-paletteu)
+- [4. Unity Object Components](#4-unity-object-components)
+  - [<u>Transform</u>](#utransformu)
+  - [<u>Sprite Renderer</u>](#usprite-rendereru)
+  - [<u>Rigidbody 2D</u>](#urigidbody-2du)
+  - [<u>Capsule Collider 2D</u>](#ucapsule-collider-2du)
+  - [<u>Animator</u>](#uanimatoru)
+  - [<u>Camera</u>](#ucamerau)
+  - [<u>Audio Source</u>](#uaudio-sourceu)
+- [5. C# in Unity](#5-c-in-unity)
+  - [<u>Public Variables</u>](#upublic-variablesu)
+  - [<u>Inside object's script</u>](#uinside-objects-scriptu)
+  - [<u>Relevant classes</u>](#urelevant-classesu)
+  - [<u>Singletons</u>](#usingletonsu)
+- [6. CheatSheet](#6-cheatsheet)
+  - [6.1. Examples](#61-examples)
+    - [Parallax](#parallax)
+    - [Melee Combat](#melee-combat)
+  - [6.2. Relevant Functions](#62-relevant-functions)
+  - [6.3. Hot Keys](#63-hot-keys)
+
+<br><br> 
+
 # 1. Install Unity
 
 # 2. Unity Workspace
-
-
 
 # 3. Unity Engine Elements
 Elements compose a bunch of features to build the game but no are part of the object. 
