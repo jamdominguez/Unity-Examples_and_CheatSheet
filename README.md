@@ -32,7 +32,9 @@ If drag and drop into the scene an sprite, automatically a new object is created
 This element is used to create animations from sprite. Selecting several sprites and clicking right button then Create > Animation.<br>
 ![animation bunch sprites](section3/animation_1.png)
 
-It is advisable to organize all Animation into same folder. This folder normally is used to store the Animator Controller too.<br>
+It is possible too create animations from Animation tab, record button and adding the sprites for the animation (**TODO: add image**).<br>
+It is advisable to organize all Animation into same folder. This folder normally is used to store the Animator Controller too.
+
 ![animation](section3/animation_2.png)
 
 - **Loop Time**: Determines the animation is shown in loop. For continuous animation in time like run, walk, idle, etc, set the value true, for other ones like jum, grab, etc, set value false.
@@ -53,7 +55,7 @@ With double click on Animator Controller icon the Animator panels appears, showi
 
 ![animatior controller](section3/animatorController_1.png)
 
-It is possible create variable to manage the transition between states.<br>
+It is possible create variable to manage the transition between states. With right click on state it isp possible set the state like default.<br>
 Clicking in a state it is possible check the Animation (**Motion**) assigned to the state
 
 ![animatior controller state](section3/animatorController_2.png)
@@ -152,11 +154,37 @@ Component to assign animation to the object (with **Controller**)
 - **Controller**: Set the Animator Controller elmenent that define the states with his animations.
 - **Avatar**: Used with humanoid objects
 
-
-
 ![animator](section4/animator.png)
 
 <br><br>
+
+## <u>Camera</u>
+This component let watch the game, and can be added to any object. Normally in empty objects to use "like camera".
+
+- **Background**: Determines the background color
+
+![camera](section4/camera.png)
+
+
+
+<br><br>
+
+## <u>Audio Source</u>
+Component used to set sounds to the scene. The common use is add music to the scene, in this case, add the component to the scene camera. The sound files used by Unity are **.ogg**.
+To convert any file to ogg format can use this free web <a href="https://audio.online-convert.com/es/convertir-a-ogg">Audio Online Converter</a>. Can preview the audio files.
+
+![audio source](section4/audioSource_a.png)
+
+Adding the component to a object can check the properties.
+
+- **Audio Clip**: File to sound
+- **Play On Awake**: Checked play the file when the object is created
+
+![audio source](section4/audioSource_b.png)
+
+<br><br>
+
+
 
 # 5. C# in Unity
 ## <u>Public Variables</u>
@@ -294,6 +322,8 @@ Destroy | Function to delete the object passed in param
 Instantiate | Function to create a Prefab instance
 DontDestroyOnLoad | Funtion to avoid the object will be destroyed when the scene end
 OverlapCircleAll | Physic2D function used to create a circle in the object position setted by parameter, range setted and objects to detec too. Returns the array object's collider detected
+Translate | Transform function to translate the object to another position
+AddForce | RigidBody2D function to apply a force to the object
 
 
 ## 6.3. Hot Keys
