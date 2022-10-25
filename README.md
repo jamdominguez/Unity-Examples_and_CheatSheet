@@ -67,6 +67,33 @@ Has Exit Time and Settings > Fixed Duration should be unchecked to avoid transit
 - **Fixed Duration**: Transition duration is independent of state length
 - **Transition Duration**: Set the duration for the transition. For Sprites in pixel art the right value is 0
 
+
+## <u>Tiles Map / Tiles palette</u>
+A Tile Map is a element used like library of sprite, usually to create environment elments. It is created normally from a spritesheet (a multy sprite). When is created, it is possible access to the map like Tiles Palette.
+
+- Go to Window > 2D > Tile Palette, a new tab will be open. "Create New Palette" and set the name (like Castle in the image)
+
+![tile set](section3/tileSet_1.png)
+
+- Get a spritesheet to get multiple sprites, setting multiple and clicking in sprite editor to define the sprites.
+- After that, drag and drop the srpritesheet modified into the Palette tab.
+
+![tile set](section3/tileSet_2.png)
+
+- With Edit, Select and Move buttons, it is possible reorganize the palette.
+- To use the palette in the scene it is necessary create a object. For this, Right Click > 2D Object > Tile Map > Rectangular. With this the Tile Map is created, where can be use the Tile Palette.
+
+![tile set](section3/tileSet_3.png)
+
+- The Grid object created has a component Grid where is very important set the cell size with the same size of the sprites in the palette. In the example below the grid and sprite size not is the exactly the same.
+
+![tile set](section3/tileSet_4.png)
+
+- If use the Tile Map to create ground for example will be necessary add colliders. For add colliders to each sprite in the Tile Palette, add to the **Tile Map** object the componente **Tilemap Collider**.
+- The last point can be generate problems, for get many colliders, in this point better get only one collider composed by all Tile Palette sprites. For do this, add to the **Tile Map** object another component called **Composite Collider**. This action add a RigidBody component too. And for all works correctly must check **Used By Composite** property in **Tilemap Collider** and in the **RigidBody** set static y **Body Type**.
+
+![tile set](section3/tileSet_5.png)
+
 <br><br>
 
 # 4. Unity Object Components
@@ -144,6 +171,34 @@ It is possible create public variable in the script associated to a object. Thes
 
 ![publicVariables_2](section5/publicVariables_2.png) ![publicVariables_2C](section5/publicVariables_2C.png)
 
+<br>
+
+## <u>Inside object's script</u>
+- GameObject is the parent object in Unity. Has a until funfion **Find()** to search a object by name, but not is a good practice.
+- Start() function is executed only one time when the object asociated is created.
+- Update() function is executed each frame
+- Inside the C# file of a object, it is possible access to the own object wit **gameObject**, it is similar to do **this** in Java.
+- Is so usefull create a function DestroyGameObject() to the destory the object in the scene. And associate this like a event in the last sprite of an Animation.
+- To get a component in the object use GetComponent<...>().
+- All object have transform component, for this reason not is necessary use GetComponent to get the transform component of a object. Only type **transform**.
+- The logic implemented in Update function, should be multiplied by **Time.DeltaTime** to avoid the frames dependency.
+- A empty object is used to contains general scripts.
+- When a C# file is created directly in the browser (and no from "Add Component" button) will be necessary  set the class name, other way, Unity doesn't found the script.
+
+<br>
+
+## <u>Relevant classes</u>
+- **Input**: Used to interact with the game keys (controls). Together this is used **KeyCode** enum to get the keys.
+- **Random**: To generate random numbers.
+- **Quaternion**: Determines the object rotation. **Quaternion.indentity** is the initial rotation in the object.
+- **Debug**: Usefull class to debug the code, using for esamel **Debug.Log** to show information in the Unity console.
+- **SceneManager**: Used to manage the game scenes.
+
+<br>
+
+## <u>Singletons</u>
+
+
 <br><br>
 
 # 6. CheatSheet
@@ -154,7 +209,7 @@ It is based in a youtube video tutorial:
 
 [![parallax tutorial](section6/parallax_a.png)](https://www.youtube.com/watch?v=zit45k6CUMk&t=10s)
 
-- The key is, each background part should be in a different layer and the paint musft finish and start at the same place.
+- The key is, each background part should be in a different layer and the paint must finish and start at the same place.
 - Create a empty object into the scene's camera. Call it "Background", drag and drop the images for the parallax background. Order the layers:
 
 ![parallax](section6/parallax_b.png)
@@ -163,7 +218,7 @@ It is based in a youtube video tutorial:
 
 ![parallax](section6/parallax_c.png)
 
-- Create a C# file to create the parallax behaviour. The tric here is create a different offsets in the movement for different background parts. And remove the bunch of background to have infinite background effect.
+- Create a C# file to create the parallax behaviour. The tric here is create a different offsets in the movement for different background parts. And move the bunch of background to have infinite background effect.
 
 ![parallax](section6/parallax_d.png)
 
@@ -171,7 +226,7 @@ It is based in a youtube video tutorial:
 - Now add the camera like component and set the "parallaxEffect" value. For the parallax effect give minor value to the nearest backgrounds and greater values to the farest backgrounds.
   -  Close to 0 the movement will be near static
   -  Close to 1 but under it, the movement will be close to the camera movement
-  -  Upper 1 the movemnt will be faster than the camera
+  -  Upper 1 the movemnt will be faster than the camera (no use this in parallax effect)
 
 ![parallax](section6/parallax_e.png)
 
@@ -198,6 +253,9 @@ It is suppose you have a scene with a player and a enemy, who will be hitted. Th
 
 ![melee combat](section6/meleeCombat_c.png)
 ![melee combat](section6/meleeCombat_d.png)
+
+- When attack animation finish, back to the idle state (the attack animation must be completely shown)
+
 ![melee combat](section6/meleeCombat_e.png)
 
 - Nex step is detect the enemies. To do this, is necessary some variables like:
@@ -235,7 +293,8 @@ OnTriggerEnter2D | Collider2D function called always the Collider touch other Co
 Destroy | Function to delete the object passed in param 
 Instantiate | Function to create a Prefab instance
 DontDestroyOnLoad | Funtion to avoid the object will be destroyed when the scene end
-OverlapCircleAll | Physic2D function used to create a circle in the object position setted by parameter, range setted and objects to detec too. Returns the array object's collider detected.
+OverlapCircleAll | Physic2D function used to create a circle in the object position setted by parameter, range setted and objects to detec too. Returns the array object's collider detected
+
 
 ## 6.3. Hot Keys
 Key | Description
