@@ -15,12 +15,16 @@ Unity is the most popular video game engine. Reason:
 - [Table of Content](#table-of-content)
 - [1. Install Unity](#1-install-unity)
 - [2. Unity Workspace](#2-unity-workspace)
+  - [<u>Project Settings</u>](#uproject-settingsu)
+    - [Physics 2D](#physics-2d)
 - [3. Unity Engine Elements](#3-unity-engine-elements)
   - [<u>Sprite</u>](#uspriteu)
   - [<u>Animation</u>](#uanimationu)
   - [<u>Animator Controller</u>](#uanimator-controlleru)
   - [<u>Tiles Map / Tiles palette</u>](#utiles-map--tiles-paletteu)
+  - [<u>Prefabs</u>](#uprefabsu)
 - [4. Unity Object Components](#4-unity-object-components)
+  - [<u>Common properties</u>](#ucommon-propertiesu)
   - [<u>Transform</u>](#utransformu)
   - [<u>Sprite Renderer</u>](#usprite-rendereru)
   - [<u>Rigidbody 2D</u>](#urigidbody-2du)
@@ -45,6 +49,24 @@ Unity is the most popular video game engine. Reason:
 # 1. Install Unity
 
 # 2. Unity Workspace
+The unity workspace is composed by several windows and sections. It can be customized, but by default contains:
+
+- **Hierarchy**: Project hierarchy. Contains the scenes, objects, elements of the project.
+- **Scene**: Show the scene elments in a space
+- **Game**: Window where is shown the game execution
+- **Animator**: Windows to work with the Animatior Controller elements, that contains the object animations and states.
+- **Inspector**: Show the object componentes (properties)
+- **Project**: It is the project browser
+- **Console**: Unity console, used to get report regarding game information, warnings or errors.
+
+![workspace](section2/workspace.png)
+
+## <u>Project Settings</u>
+From Edit>Project Setting it is possible change multiple project properties and features:
+### Physics 2D
+- **Gravity**: Force applied to all rigid bodies. By default is -9.81 in Y axis, but it is possible modify this in X and Y axis (remember physics 2D section)
+
+![project_settings_1](section2/project_settings_1.png)
 
 # 3. Unity Engine Elements
 Elements compose a bunch of features to build the game but no are part of the object. 
@@ -131,8 +153,34 @@ A Tile Map is a element used like library of sprite, usually to create environme
 
 <br><br>
 
+
+## <u>Prefabs</u>
+An prefab is a object file. It is a scene object that is "exported" like an Unity engine element to be used in any scene of the game.<br>
+The prefabs are used when it is necessary instance multiple times a object. All prefabs instances are linked.<br>
+Each prefab instance has a Tag section, so, if some instance get a change, this change can be applied to the prefab "parent". 
+
+![prefab](section3/prefab_1.png)
+
+Create a prefab is easy. Only doing drag and drop of the scene object, to the project explorer.
+
+![prefab](section3/prefab_2.png)
+
+The objects position are relative to his parent, for this reason, when prefabs instances are added to the scene, it is good idea use a parent container to reference the prefabs position. <br>
+The parent object of a object can be obtained using **transform.parent.gameObject**.
+
+<br><br>
+
+
 # 4. Unity Object Components
 Components are added to a scene object and used to build the object type in the game.
+
+## <u>Common properties</u>
+Every object in the scene has some properties regardless of the object type.
+
+- **Tag**: Property used to group scene object for some property o feature. There are default tags and it is possible create another ones.
+- **Layer**: Property used to group the object layer in the scene, usefull in 2D games. Like the tags, there are default layers and it is possible create another ones
+
+![Common Properties](section4/commonProperties_1.png)
 
 ## <u>Transform</u>
 [Transform - Unity Documentation](https://docs.unity3d.com/2021.3/Documentation/Manual/class-Transform.html)<br>
@@ -195,6 +243,7 @@ Component to assign animation to the object (with **Controller**)
 This component let watch the game, and can be added to any object. Normally in empty objects to use "like camera".
 
 - **Background**: Determines the background color
+- **Size**: Determines the vertical size
 
 ![camera](section4/camera.png)
 
@@ -212,6 +261,7 @@ Adding the component to a object can check the properties.
 
 - **Audio Clip**: File to sound
 - **Play On Awake**: Checked play the file when the object is created
+- **Volume**: Determines the audio source volumne. Values between 1 (100%) and 0 (0%)
 
 ![audio source](section4/audioSource_b.png)
 
