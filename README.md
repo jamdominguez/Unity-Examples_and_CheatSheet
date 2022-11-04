@@ -18,6 +18,8 @@ Unity is the most popular video game engine. Reason:
   - [<u>Project Settings</u>](#uproject-settingsu)
     - [Physics 2D](#physics-2d)
 - [3. Unity Engine Elements](#3-unity-engine-elements)
+  - [<u>User Interface (UI)</u>](#uuser-interface-uiu)
+  - [<u>Scenes</u>](#uscenesu)
   - [<u>Sprite</u>](#uspriteu)
   - [<u>Animation</u>](#uanimationu)
   - [<u>Animator Controller</u>](#uanimator-controlleru)
@@ -69,7 +71,22 @@ From Edit>Project Setting it is possible change multiple project properties and 
 ![project_settings_1](section2/project_settings_1.png)
 
 # 3. Unity Engine Elements
-Elements compose a bunch of features to build the game but no are part of the object. 
+Elements compose a bunch of features to build the game but no are part of the object.
+
+## <u>User Interface (UI)</u>
+In Unity the UI is a engine element with many subelements, and is printed over scene.<br>
+To create a UI element, in the Hierachy section (or on a camera if the camera follow the player) Right Click > UI and select the element.
+
+![ui_1](section3/ui_1.png)
+
+## <u>Scenes</u>
+The scenes are the game sections, are used to divide like stages, zones, etc. The scenes contains the gameObjects. By default a main scene is exectued when the game run.<br>
+From File > Build Setting it is possible manage the differents scenes in the game.<br>
+To load a scenes from script use **SceneManager.LoadScene("SceneName")**. Becareful because must import the scene manager to use that (**using UnityEngine.SceneManagement**).
+
+![scenes_1](section3/scenes_1.png)
+
+
 ## <u>Sprite</u>
 Is a image resource used in the project. The sprites can be used to create animations, background, etc.<br>
 Selecting a sprite in Unity browser is possible check his parameters.<br>
@@ -422,6 +439,7 @@ DontDestroyOnLoad | Funtion to avoid the object will be destroyed when the scene
 OverlapCircleAll | Physic2D function used to create a circle in the object position setted by parameter, range setted and objects to detec too. Returns the array object's collider detected
 Translate | Transform function to translate the object to another position
 AddForce | RigidBody2D function to apply a force to the object
+LoadScene | SceneManager function to load a scene by name
 
 
 ## 6.3. Hot Keys
