@@ -149,7 +149,7 @@ Component assigned to print a sprite into the scene. If drag and drop into the s
 - **Flip**: Turn the image by axis (x o y)
 - **Aditional Setting > Orden in Layer**: Determines the sprite position (in fron of or behind) in the scene
 - **Flip**: X and Y use to flip the sprite according axis
-- **Sorting Layer**: Layer that the object is included
+- **Sorting Layer**: Layer that the object is included. It is possible define layers to group the different scene objets (seleccting "Add Sorting Layer"). The layers are printed from up to down, use this to organize the scene layers
 - **Order in Layer**: Object order in his layer
 
 ![spriteRenderer](section4/spriteRenderer.png)
@@ -258,7 +258,22 @@ It is possible create public variable in the script associated to a object. Thes
 <br>
 
 ## <u>Singletons</u>
+se hace algo diferente que en Java, es usado para acceder a funciones desde cualquier objeto/script de la escena.
+The singletons must be added to the objects script like public variable bo be accesible
+A singleton is a script object with a unique instance. It is used to manage features, data, etc between all scenes and objects game. Create singletons is a method used in other programming languages like Java to create services with a unique instance to provide funcions used in the application.<br>
 
+In Unity the singleton script must be added to a empty object. To create the singleton script, it must contain a **public static** variable for hiself and control the creation or destruction in his **Start** method (constructor).
+
+![singleton](section5/singleton_1.png)
+
+<br>
+
+![singleton](section5/singleton_2.png)
+
+
+The game objects can use the functions provide by the singleton.
+
+![singleton](section5/singleton_3.png)
 
 <br><br>
 
