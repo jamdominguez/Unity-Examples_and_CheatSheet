@@ -44,7 +44,7 @@ Unity is the most popular video game engine. Reason:
   - [6.1. Examples](#61-examples)
     - [Parallax](#parallax)
     - [Melee Combat](#melee-combat)
-  - [6.2. Relevant Functions](#62-relevant-functions)
+  - [6.2. Relevant Functions and Attributes](#62-relevant-functions-and-attributes)
   - [6.3. Hot Keys](#63-hot-keys)
 
 <br><br> 
@@ -99,6 +99,10 @@ From File > Build Setting it is possible manage the differents scenes in the gam
 To load a scenes from script use **SceneManager.LoadScene("SceneName")**. Becareful because must import the scene manager to use that (**using UnityEngine.SceneManagement**).
 
 ![scenes_1](section3/scenes_1.png)
+
+To create new scene from File > New Scene, this action create a empty scene. It is possible copy paste scenes and modified that.
+
+![scenes_2](section3/scenes_2.png)
 
 
 ## <u>Sprite</u>
@@ -453,7 +457,7 @@ It is suppose you have a scene with a player and a enemy, who will be hitted. Th
 
  
 
-## 6.2. Relevant Functions
+## 6.2. Relevant Functions and Attributes
 Key | Description
 :-------:|------------
 OnCollisionEnter2D | RigidBody2D function called always the RigidBody touch other RigidBody
@@ -467,6 +471,10 @@ LoadScene | SceneManager function to load a scene by name
 Raycast | Physics2D function used to check if some physic object above current object throwing a ray from a position, to a direction, with length
 OnTriggerEnter2D | Function is executed when a collider enter in another one
 OnTriggerExit2D | Function is executed when a collider exit of another one
+FindObjectOfType | Find a object with a component
+GetActiveScene | SceneManagement function, returns the acrive scene, can be used buildIndex to get the scene index in the Build Setting configuration
+transform.parent.gameObject | Get the parent object
+sceneCount | From SceneManagement, returns the count of scenes in the hierarchy.
 
 
 ## 6.3. Hot Keys
