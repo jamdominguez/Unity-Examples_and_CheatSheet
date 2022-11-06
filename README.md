@@ -15,6 +15,7 @@ Unity is the most popular video game engine. Reason:
 - [Table of Content](#table-of-content)
 - [1. Install Unity](#1-install-unity)
 - [2. Unity Workspace](#2-unity-workspace)
+  - [<u>Asset Store</u>](#uasset-storeu)
   - [<u>Project Settings</u>](#uproject-settingsu)
     - [Physics 2D](#physics-2d)
 - [3. Unity Engine Elements](#3-unity-engine-elements)
@@ -62,6 +63,19 @@ The unity workspace is composed by several windows and sections. It can be custo
 - **Console**: Unity console, used to get report regarding game information, warnings or errors.
 
 ![workspace](section2/workspace.png)
+
+## <u>Asset Store</u>
+It is possible get asset from the Unity store in Window > Asset Store. From the store it is possible select a asset package and add this to the **Package Mnager** clicking on "Add to My Assets".
+
+![Asset Store](section2/asset_store_1.png)
+
+<br>
+
+![Asset Store](section2/asset_store_2.png)
+
+From Package Manager it is possible download ad import the asset in the project open.
+
+![Asset Store](section2/asset_store_3.png)
 
 ## <u>Project Settings</u>
 From Edit>Project Setting it is possible change multiple project properties and features:
@@ -168,6 +182,16 @@ A Tile Map is a element used like library of sprite, usually to create environme
 
 ![tile set](section3/tileSet_5.png)
 
+- **Material**: Let set a material type to the collider (Tilemap Collider or Composite Collider). Is usefull to set materials with diferent frictions.
+
+![material](section3/material_1.png)
+
+<br>
+
+![material](section3/material_2.png)
+![material](section3/material_3.png)
+![material](section3/material_4.png)
+
 <br><br>
 
 
@@ -213,7 +237,6 @@ Component assigned to print a sprite into the scene. If drag and drop into the s
 - **Color**: Componet color.
 - **Flip**: Turn the image by axis (x o y)
 - **Aditional Setting > Orden in Layer**: Determines the sprite position (in fron of or behind) in the scene
-- **Flip**: X and Y use to flip the sprite according axis
 - **Sorting Layer**: Layer that the object is included. It is possible define layers to group the different scene objets (seleccting "Add Sorting Layer"). The layers are printed from up to down, use this to organize the scene layers
 - **Order in Layer**: Object order in his layer
 
@@ -298,6 +321,8 @@ It is possible create public variable in the script associated to a object. Thes
 <br>
 
 ![publicVariables_2](section5/publicVariables_2.png) ![publicVariables_2C](section5/publicVariables_2C.png)
+
+When a public varialbe is **static** too, this variable is accesible from any script in the game.
 
 <br>
 
@@ -432,7 +457,6 @@ It is suppose you have a scene with a player and a enemy, who will be hitted. Th
 Key | Description
 :-------:|------------
 OnCollisionEnter2D | RigidBody2D function called always the RigidBody touch other RigidBody
-OnTriggerEnter2D | Collider2D function called always the Collider touch other Collider
 Destroy | Function to delete the object passed in param 
 Instantiate | Function to create a Prefab instance
 DontDestroyOnLoad | Funtion to avoid the object will be destroyed when the scene end
@@ -440,6 +464,9 @@ OverlapCircleAll | Physic2D function used to create a circle in the object posit
 Translate | Transform function to translate the object to another position
 AddForce | RigidBody2D function to apply a force to the object
 LoadScene | SceneManager function to load a scene by name
+Raycast | Physics2D function used to check if some physic object above current object throwing a ray from a position, to a direction, with length
+OnTriggerEnter2D | Function is executed when a collider enter in another one
+OnTriggerExit2D | Function is executed when a collider exit of another one
 
 
 ## 6.3. Hot Keys
