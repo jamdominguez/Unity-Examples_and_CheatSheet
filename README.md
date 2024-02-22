@@ -18,6 +18,7 @@ Unity is the most popular video game engine. Reason:
   - [<u>Asset Store</u>](#uasset-storeu)
   - [<u>Project Settings</u>](#uproject-settingsu)
     - [Physics 2D](#physics-2d)
+  - [<u>Snap</u>](#usnapu)
 - [3. Unity Engine Elements](#3-unity-engine-elements)
   - [<u>User Interface (UI)</u>](#uuser-interface-uiu)
   - [<u>Scenes</u>](#uscenesu)
@@ -84,6 +85,13 @@ From Edit>Project Setting it is possible change multiple project properties and 
 
 ![project_settings_1](section2/project_settings_1.png)
 
+## <u>Snap</u>
+Unity has a usefull tool to move, rotate object. The snap menu let modify the properties to make easy work with the objects. In the example bellow the snap move has been changed to 64px, is the lenght of the background sprite component. With this length is easy duplicate and move together the last one.
+
+![project_settings_1](section2/snap_1.png)
+
+To move a object using snap property use Crtrl while move the object.
+
 # 3. Unity Engine Elements
 Elements compose a bunch of features to build the game but no are part of the object.
 
@@ -122,12 +130,23 @@ If drag and drop into the scene an sprite, automatically a new object is created
 This element is used to create animations from sprite. Selecting several sprites and clicking right button then Create > Animation.<br>
 ![animation bunch sprites](section3/animation_1.png)
 
-It is possible too create animations from Animation tab, record button and adding the sprites for the animation (**TODO: add image**).<br>
+It is possible too create animations from Animation tab, record button and adding the sprites for the animation or moving the object. First open Animation panel, and push Create button in the middle of the panel. Second is clik on record button and set a key in the position (or property to animate) of the object. The next steps is create keys (clicking on time line too) and changing the properties.
+
+![animation](section3/animation_4.png)
+![animation](section3/animation_5.png)
+![animation](section3/animation_6.png)
+
+If check the animation has litle jumps, can use **curve** option in the animation, and selecting all curves, right click and **Auto**.
+
+![animation](section3/animation_7.png)
+
+
 It is advisable to organize all Animation into same folder. This folder normally is used to store the Animator Controller too.
 
 ![animation](section3/animation_2.png)
 
 - **Loop Time**: Determines the animation is shown in loop. For continuous animation in time like run, walk, idle, etc, set the value true, for other ones like jum, grab, etc, set value false.
+
 
 <br>
 
